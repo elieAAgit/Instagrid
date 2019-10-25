@@ -9,7 +9,11 @@
 import UIKit
 
 class GridView: UIView {
-
+    @IBOutlet var topLeftButton: UIButton!
+    @IBOutlet var topRightButton: UIButton!
+    @IBOutlet var bottomLeftButton: UIButton!
+    @IBOutlet var bottomRightButton: UIButton!
+    
     enum Grid {
         case first, center, last
     }
@@ -26,7 +30,9 @@ class GridView: UIView {
             }
         }
     }
-    
+}
+
+extension GridView {
     func first() {
         topLeftButton.isHidden = false
         topRightButton.isHidden = true
@@ -47,9 +53,4 @@ class GridView: UIView {
         bottomLeftButton.isHidden = false
         bottomRightButton.isHidden = false
     }
-    
-    @IBOutlet var topLeftButton: UIButton!
-    @IBOutlet var topRightButton: UIButton!
-    @IBOutlet var bottomLeftButton: UIButton!
-    @IBOutlet var bottomRightButton: UIButton!
 }

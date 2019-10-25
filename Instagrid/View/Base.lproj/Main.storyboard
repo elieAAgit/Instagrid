@@ -63,13 +63,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="134.5" height="134.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="whenButtonChooseImageIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v3A-aG-Jby"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIg-el-gWB" userLabel="Top Right Button">
                                                         <rect key="frame" x="144.5" y="0.0" width="134.5" height="134.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="whenButtonChooseImageIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qV5-V9-bTI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -80,11 +84,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="134.5" height="134.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="whenButtonChooseImageIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZ3-mK-r3Y"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwl-lD-QD6" userLabel="Bottom Right Button">
                                                         <rect key="frame" x="144.5" y="0.0" width="134.5" height="134.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="whenButtonChooseImageIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vbq-gd-fum"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -184,7 +194,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="79.5" height="79.5"/>
                                                 <state key="normal" image="Layout 1"/>
                                                 <connections>
-                                                    <action selector="whenFirstButtonIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ie1-Az-dWI"/>
+                                                    <action selector="whenBottomButtonIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lnw-hu-1QB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-Ao-dHh" userLabel="Center Button">
@@ -194,14 +204,14 @@
                                                 </constraints>
                                                 <state key="normal" image="Layout 2"/>
                                                 <connections>
-                                                    <action selector="whenCenterButtonIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSV-p6-8o4"/>
+                                                    <action selector="whenBottomButtonIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bxi-gf-151"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyP-YZ-HQX" userLabel="Last Button">
                                                 <rect key="frame" x="199.5" y="0.0" width="79.5" height="79.5"/>
                                                 <state key="normal" image="Layout 3"/>
                                                 <connections>
-                                                    <action selector="whenLastButtonIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qs3-o5-ZZS"/>
+                                                    <action selector="whenBottomButtonIsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w3d-YW-kY4"/>
                                                 </connections>
                                             </button>
                                         </subviews>
