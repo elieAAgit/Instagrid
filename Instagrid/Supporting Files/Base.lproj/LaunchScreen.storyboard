@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S8r-GA-r03">
-                                <rect key="frame" x="100" y="341" width="214" height="214"/>
+                                <rect key="frame" x="100" y="246" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S8r-GA-r03" secondAttribute="height" multiplier="1:1" id="riQ-23-wYF"/>
                                 </constraints>
@@ -24,11 +24,71 @@
                         </subviews>
                         <color key="backgroundColor" red="0.74211496109999997" green="0.84083592890000003" blue="0.88922405240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S8r-GA-r03" secondAttribute="bottom" constant="100" id="9Xc-76-bAe">
+                                <variation key="heightClass=compact-widthClass=compact" constant="70"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S8r-GA-r03" secondAttribute="trailing" constant="100" id="EKT-zs-BaE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S8r-GA-r03" secondAttribute="bottom" constant="70" id="FXc-RI-zta"/>
                             <constraint firstItem="S8r-GA-r03" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Gzk-IX-Gcv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S8r-GA-r03" secondAttribute="bottom" constant="100" id="Pfb-nS-1a7">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
+                            <constraint firstItem="S8r-GA-r03" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="QAZ-y9-k70">
+                                <variation key="heightClass=compact-widthClass=compact" constant="70"/>
+                            </constraint>
+                            <constraint firstItem="S8r-GA-r03" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="ZUO-nB-yiE"/>
+                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a5k-Hh-GA6"/>
+                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aoM-FR-Wd7"/>
                             <constraint firstItem="S8r-GA-r03" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="cjo-aj-D8X"/>
+                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eVn-vf-DA5"/>
+                            <constraint firstItem="S8r-GA-r03" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="xto-oE-Yyy">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9Xc-76-bAe"/>
+                                <exclude reference="FXc-RI-zta"/>
+                                <exclude reference="Pfb-nS-1a7"/>
+                                <exclude reference="QAZ-y9-k70"/>
+                                <exclude reference="ZUO-nB-yiE"/>
+                                <exclude reference="a5k-Hh-GA6"/>
+                                <exclude reference="aoM-FR-Wd7"/>
+                                <exclude reference="eVn-vf-DA5"/>
+                                <exclude reference="xto-oE-Yyy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="EKT-zs-BaE"/>
+                                <include reference="FXc-RI-zta"/>
+                                <exclude reference="Gzk-IX-Gcv"/>
+                                <include reference="ZUO-nB-yiE"/>
+                                <exclude reference="cjo-aj-D8X"/>
+                                <include reference="eVn-vf-DA5"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="9Xc-76-bAe"/>
+                                <exclude reference="EKT-zs-BaE"/>
+                                <exclude reference="Gzk-IX-Gcv"/>
+                                <include reference="QAZ-y9-k70"/>
+                                <include reference="aoM-FR-Wd7"/>
+                                <exclude reference="cjo-aj-D8X"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="EKT-zs-BaE"/>
+                                <include reference="Pfb-nS-1a7"/>
+                                <exclude reference="Gzk-IX-Gcv"/>
+                                <include reference="a5k-Hh-GA6"/>
+                                <exclude reference="cjo-aj-D8X"/>
+                                <include reference="xto-oE-Yyy"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

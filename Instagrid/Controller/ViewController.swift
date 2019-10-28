@@ -14,50 +14,58 @@ class ViewController: UIViewController {
     @IBOutlet weak var gridView: GridView!
     @IBOutlet var bottomButtons: [UIButton]!
     @IBOutlet var selectedBottomButtons: [UIImageView]!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        gridView.grid = .center
+        loadGrid()
     }
 }
 
 extension ViewController {
     @IBAction func whenBottomButtonIsTapped(_ sender: UIButton) {
-            untapButtons()
+        var selectedIndex = Int()
+
+        untapButtons()
 
         switch sender {
         case bottomButtons[0]:
             gridView.grid = .first
-            selectedBottomButtons[0].isHidden = false
+            selectedIndex = 0
         case bottomButtons[1]:
             gridView.grid = .center
-            selectedBottomButtons[1].isHidden = false
+            selectedIndex = 1
         case bottomButtons[2]:
             gridView.grid = .last
-            selectedBottomButtons[2].isHidden = false
+            selectedIndex = 2
         default:
             break
         }
+
+        animatedBottomButton(gesture: sender, selectedIndex: selectedIndex)
+
+        gridView.shake()
     }
 
     private func untapButtons() {
         for index in 0 ... selectedBottomButtons.count - 1 {
-            selectedBottomButtons[index].isHidden = true
+        selectedBottomButtons[index].isHidden = true
         }
     }
 }
 
-// MARK : Choose Image
+// MARK: Choose Image
 extension ViewController {
     @IBAction func whenButtonChooseImageIsTapped(_ sender: UIButton) {
         buttonTapped = sender
 
+        animatedGridButton(gesture: sender)
+        
         showImagePickerController()
     }
 }
 
-// MARK : UIImagePickerController
+// MARK: UIImagePickerController
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     private func showImagePickerController() {
@@ -77,5 +85,40 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
 
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: animation
+extension ViewController {
+    private func loadGrid() {
+        gridView.grid = .center
+        gridView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+
+        UIView.animate(withDuration: 0.5) {
+        self.gridView.transform = .identity
+        }
+    }
+
+    private func animatedGridButton(gesture: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5,
+                       options: .curveEaseIn, animations: {
+            gesture.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }) { (_) in
+            gesture.transform = .identity
+        }
+    }
+
+    private func animatedBottomButton(gesture: UIButton, selectedIndex: Int) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.85,
+                       initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            gesture.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }) { (_) in
+            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.85,
+                           initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                gesture.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) { (_) in
+                self.selectedBottomButtons[selectedIndex].isHidden = false
+            }
+        }
     }
 }
