@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     private var buttonTapped: UIButton?
 
+    @IBOutlet weak var swipeUp: UIButton!
+    @IBOutlet weak var swipeLeft: UIButton!
     @IBOutlet weak var gridView: GridView!
     @IBOutlet var bottomButtons: [UIButton]!
     @IBOutlet var selectedBottomButtons: [UIImageView]!
@@ -19,6 +21,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         loadGrid()
+        
+        swipeGesture()
     }
 }
 
@@ -87,6 +91,40 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         dismiss(animated: true, completion: nil)
     }
 }
+
+// MARK: SwipeGestureReconizer
+extension ViewController {
+    private func swipeGesture() {
+        let swipeUpGestureReconizer = UISwipeGestureRecognizer(target: self, action: #selector (whenUpGestureIsMade(_:)))
+        let swipeLeftGestureReconizer = UISwipeGestureRecognizer(target: self, action: #selector (whenLeftGestureIsMade(_:)))
+        
+        swipeUpGestureReconizer.direction = .up
+        swipeLeftGestureReconizer.direction = .left
+        
+        swipeUp.addGestureRecognizer(swipeUpGestureReconizer)
+        swipeLeft.addGestureRecognizer(swipeLeftGestureReconizer)
+    }
+    
+    @objc private func whenUpGestureIsMade(_ gesture: UISwipeGestureRecognizer) {
+        let screenHeight = UIScreen.main.bounds.height
+        gesture.direction = .up
+
+        UIView.animate(withDuration: 1) {
+                self.gridView.transform = CGAffineTransform(translationX: 0, y: -screenHeight)
+        }
+    }
+    
+    @objc private func whenLeftGestureIsMade(_ gesture: UISwipeGestureRecognizer) {
+        let screenWidth = UIScreen.main.bounds.width
+        gesture.direction = .left
+
+        UIView.animate(withDuration: 1) {
+                self.gridView.transform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        }
+    }
+}
+
+
 
 // MARK: animation
 extension ViewController {
