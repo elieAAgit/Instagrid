@@ -27,6 +27,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    // choosing disposition grid
     @IBAction func whenBottomButtonIsTapped(_ sender: UIButton) {
         var selectedIndex = Int()
 
@@ -112,6 +113,7 @@ extension ViewController {
         UIView.animate(withDuration: 1) {
                 self.gridView.transform = CGAffineTransform(translationX: 0, y: -screenHeight)
         }
+        UIViewActivityController()
     }
     
     @objc private func whenLeftGestureIsMade(_ gesture: UISwipeGestureRecognizer) {
@@ -121,10 +123,42 @@ extension ViewController {
         UIView.animate(withDuration: 1) {
                 self.gridView.transform = CGAffineTransform(translationX: -screenWidth, y: 0)
         }
+        UIViewActivityController()
     }
 }
 
+// MARK: UIViewActivityController
+extension ViewController {
+    func UIViewActivityController() {
+        let gridImage = gridView.transformAsImage()
+        let item = [gridImage]
+        let activityController = UIActivityViewController(activityItems: item as [Any], applicationActivities: nil)
 
+        present(activityController, animated: true)
+
+        activityController.completionWithItemsHandler = { (activityType, completed: Bool,
+            returnedItems: [Any]?, error: Error?) in
+            if completed {
+                self.gridView.reloadGrid()
+                self.presentAlert()
+           }
+
+            UIView.animate(withDuration: 1) {
+                self.gridView.transform = .identity
+            }
+        }
+    }
+}
+
+//MARK: Alerte share success
+extension ViewController {
+    private func presentAlert() {
+        let alert = UIAlertController(title: "Share success!" , message: "You have share your image with success.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+}
 
 // MARK: animation
 extension ViewController {

@@ -13,6 +13,7 @@
 		0D3C47622355F661009C35C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C47602355F661009C35C3 /* Main.storyboard */; };
 		0D3C47642355F664009C35C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C47632355F664009C35C3 /* Assets.xcassets */; };
 		0D3C47672355F664009C35C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C47652355F664009C35C3 /* LaunchScreen.storyboard */; };
+		0D3CC95C236B7C8D000178E8 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D3CC95B236B7C8D000178E8 /* Delm-Medium.otf */; };
 		0D5698AE235FA95100D15F92 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5698AD235FA95100D15F92 /* GridView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		0D3C47632355F664009C35C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3C47662355F664009C35C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D3C47682355F664009C35C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D3CC95B236B7C8D000178E8 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		0D5698AD235FA95100D15F92 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				0D3C475A2355F661009C35C3 /* AppDelegate.swift */,
 				0D3C475C2355F661009C35C3 /* SceneDelegate.swift */,
 				0D3C47632355F664009C35C3 /* Assets.xcassets */,
+				0D3CC95B236B7C8D000178E8 /* Delm-Medium.otf */,
 				0D3C47652355F664009C35C3 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -162,6 +165,7 @@
 			files = (
 				0D3C47672355F664009C35C3 /* LaunchScreen.storyboard in Resources */,
 				0D3C47642355F664009C35C3 /* Assets.xcassets in Resources */,
+				0D3CC95C236B7C8D000178E8 /* Delm-Medium.otf in Resources */,
 				0D3C47622355F661009C35C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

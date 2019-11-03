@@ -18,6 +18,7 @@ class GridView: UIView {
         case first, center, last
     }
 
+    // Choosing disposition grid
     var grid: Grid = .center {
         didSet {
             switch grid {
@@ -56,6 +57,7 @@ extension GridView {
 }
 
 extension GridView {
+    // reload the grid after saving image
     func reloadGrid() {
         let selectedImage = UIImage(named: "Plus")
         topLeftButton.setImage(selectedImage, for: .normal)
@@ -66,6 +68,26 @@ extension GridView {
 }
 
 extension GridView {
+    // Using a function since `var image` might conflict with an existing variable
+    // (like on `UIImageView`)
+    func transformAsImage() -> UIImage {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)
+            }
+        } else {
+            UIGraphicsBeginImageContext(self.frame.size)
+            self.layer.render(in: UIGraphicsGetCurrentContext()!)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return UIImage(cgImage: image!.cgImage!)
+        }
+    }
+}
+
+extension GridView {
+    // animation with changing disposition grid
     func shake() {
         let shake = CABasicAnimation(keyPath: "position")
 
