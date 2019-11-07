@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     private var buttonTapped: UIButton?
 
-    @IBOutlet weak var swipeUp: UIButton!
-    @IBOutlet weak var swipeLeft: UIButton!
+    @IBOutlet weak var instagridLabel: UILabel!
+    @IBOutlet weak var swipeUp: UIView!
+    @IBOutlet weak var swipeLeft: UIView!
     @IBOutlet weak var gridView: GridView!
     @IBOutlet var bottomButtons: [UIButton]!
     @IBOutlet var selectedBottomButtons: [UIImageView]!
@@ -21,13 +22,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         loadGrid()
-        
+
         swipeGesture()
     }
 }
 
+// MARK: Choosing grid disposition
 extension ViewController {
-    // choosing disposition grid
     @IBAction func whenBottomButtonIsTapped(_ sender: UIButton) {
         var selectedIndex = Int()
 
@@ -59,20 +60,17 @@ extension ViewController {
     }
 }
 
-// MARK: Choose Image
-extension ViewController {
+// MARK: Choose and show image for grid button's
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBAction func whenButtonChooseImageIsTapped(_ sender: UIButton) {
         buttonTapped = sender
 
         animatedGridButton(gesture: sender)
-        
+
         showImagePickerController()
     }
-}
-
-// MARK: UIImagePickerController
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    // UIImagePickerController
     private func showImagePickerController() {
 
         let imagePicker = UIImagePickerController()
@@ -81,7 +79,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         present(imagePicker, animated: true, completion: nil)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:
+        [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             guard let buttonChoice = buttonTapped else {
                 return
@@ -96,16 +95,18 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 // MARK: SwipeGestureReconizer
 extension ViewController {
     private func swipeGesture() {
-        let swipeUpGestureReconizer = UISwipeGestureRecognizer(target: self, action: #selector (whenUpGestureIsMade(_:)))
-        let swipeLeftGestureReconizer = UISwipeGestureRecognizer(target: self, action: #selector (whenLeftGestureIsMade(_:)))
-        
+        let swipeUpGestureReconizer = UISwipeGestureRecognizer(target: self, action:
+            #selector (whenUpGestureIsMade(_:)))
+        let swipeLeftGestureReconizer = UISwipeGestureRecognizer(target: self, action:
+            #selector (whenLeftGestureIsMade(_:)))
+
         swipeUpGestureReconizer.direction = .up
         swipeLeftGestureReconizer.direction = .left
-        
+
         swipeUp.addGestureRecognizer(swipeUpGestureReconizer)
         swipeLeft.addGestureRecognizer(swipeLeftGestureReconizer)
     }
-    
+
     @objc private func whenUpGestureIsMade(_ gesture: UISwipeGestureRecognizer) {
         let screenHeight = UIScreen.main.bounds.height
         gesture.direction = .up
@@ -115,7 +116,7 @@ extension ViewController {
         }
         UIViewActivityController()
     }
-    
+
     @objc private func whenLeftGestureIsMade(_ gesture: UISwipeGestureRecognizer) {
         let screenWidth = UIScreen.main.bounds.width
         gesture.direction = .left
@@ -129,7 +130,7 @@ extension ViewController {
 
 // MARK: UIViewActivityController
 extension ViewController {
-    func UIViewActivityController() {
+    private func UIViewActivityController() {
         let gridImage = gridView.transformAsImage()
         let item = [gridImage]
         let activityController = UIActivityViewController(activityItems: item as [Any], applicationActivities: nil)
@@ -150,7 +151,7 @@ extension ViewController {
     }
 }
 
-//MARK: Alerte share success
+// MARK: Alerte share success
 extension ViewController {
     private func presentAlert() {
         let alert = UIAlertController(title: "Share success!" , message: "You have share your image with success.", preferredStyle: .alert)

@@ -18,7 +18,6 @@ class GridView: UIView {
         case first, center, last
     }
 
-    // Choosing disposition grid
     var grid: Grid = .center {
         didSet {
             switch grid {
@@ -33,22 +32,23 @@ class GridView: UIView {
     }
 }
 
+// MARK: Grid dipsosition choice
 extension GridView {
-    func first() {
+    private func first() {
         topLeftButton.isHidden = false
         topRightButton.isHidden = true
         bottomLeftButton.isHidden = false
         bottomRightButton.isHidden = false
     }
 
-    func center() {
+    private func center() {
         topLeftButton.isHidden = false
         topRightButton.isHidden = false
         bottomLeftButton.isHidden = false
         bottomRightButton.isHidden = true
     }
 
-    func last() {
+    private func last() {
         topLeftButton.isHidden = false
         topRightButton.isHidden = false
         bottomLeftButton.isHidden = false
@@ -56,6 +56,7 @@ extension GridView {
     }
 }
 
+//MARK: Reload grid after share success
 extension GridView {
     // reload the grid after saving image
     func reloadGrid() {
@@ -67,9 +68,8 @@ extension GridView {
     }
 }
 
+// MARK: Transform grid as image
 extension GridView {
-    // Using a function since `var image` might conflict with an existing variable
-    // (like on `UIImageView`)
     func transformAsImage() -> UIImage {
         if #available(iOS 10.0, *) {
             let renderer = UIGraphicsImageRenderer(bounds: bounds)
@@ -86,8 +86,8 @@ extension GridView {
     }
 }
 
+// MARK: animation for changing disposition grid
 extension GridView {
-    // animation with changing disposition grid
     func shake() {
         let shake = CABasicAnimation(keyPath: "position")
 

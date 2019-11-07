@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,81 +12,50 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S8r-GA-r03">
-                                <rect key="frame" x="100" y="246" width="175" height="175"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="1w6-LH-JGs">
+                                <rect key="frame" x="100" y="415" width="214" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="S8r-GA-r03" secondAttribute="height" multiplier="1:1" id="riQ-23-wYF"/>
+                                    <constraint firstAttribute="width" secondItem="1w6-LH-JGs" secondAttribute="height" multiplier="42:13" id="DDj-Zj-dFi"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.74211496109999997" green="0.84083592890000003" blue="0.88922405240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S8r-GA-r03" secondAttribute="bottom" constant="100" id="9Xc-76-bAe">
-                                <variation key="heightClass=compact-widthClass=compact" constant="70"/>
-                            </constraint>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S8r-GA-r03" secondAttribute="trailing" constant="100" id="EKT-zs-BaE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S8r-GA-r03" secondAttribute="bottom" constant="70" id="FXc-RI-zta"/>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Gzk-IX-Gcv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S8r-GA-r03" secondAttribute="bottom" constant="100" id="Pfb-nS-1a7">
-                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                            </constraint>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="QAZ-y9-k70">
-                                <variation key="heightClass=compact-widthClass=compact" constant="70"/>
-                            </constraint>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="ZUO-nB-yiE"/>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a5k-Hh-GA6"/>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aoM-FR-Wd7"/>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="cjo-aj-D8X"/>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eVn-vf-DA5"/>
-                            <constraint firstItem="S8r-GA-r03" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="xto-oE-Yyy">
-                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                            </constraint>
+                            <constraint firstItem="1w6-LH-JGs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Blw-Pl-yck"/>
+                            <constraint firstItem="1w6-LH-JGs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="PBF-4j-rSP"/>
+                            <constraint firstItem="1w6-LH-JGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="200" id="Pkr-8a-ca6"/>
+                            <constraint firstItem="1w6-LH-JGs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gPA-sI-WlI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1w6-LH-JGs" secondAttribute="trailing" constant="200" id="mn9-PY-aEW"/>
+                            <constraint firstItem="1w6-LH-JGs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="oEO-xK-qqU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1w6-LH-JGs" secondAttribute="trailing" constant="100" id="sp5-Dr-i8s"/>
+                            <constraint firstItem="1w6-LH-JGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="wxF-bH-5LU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1w6-LH-JGs" secondAttribute="bottom" constant="150" id="y40-AS-2Sm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="9Xc-76-bAe"/>
-                                <exclude reference="FXc-RI-zta"/>
-                                <exclude reference="Pfb-nS-1a7"/>
-                                <exclude reference="QAZ-y9-k70"/>
-                                <exclude reference="ZUO-nB-yiE"/>
-                                <exclude reference="a5k-Hh-GA6"/>
-                                <exclude reference="aoM-FR-Wd7"/>
-                                <exclude reference="eVn-vf-DA5"/>
-                                <exclude reference="xto-oE-Yyy"/>
+                                <exclude reference="mn9-PY-aEW"/>
+                                <exclude reference="y40-AS-2Sm"/>
+                                <exclude reference="Blw-Pl-yck"/>
+                                <exclude reference="PBF-4j-rSP"/>
+                                <exclude reference="Pkr-8a-ca6"/>
+                                <exclude reference="oEO-xK-qqU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <exclude reference="EKT-zs-BaE"/>
-                                <include reference="FXc-RI-zta"/>
-                                <exclude reference="Gzk-IX-Gcv"/>
-                                <include reference="ZUO-nB-yiE"/>
-                                <exclude reference="cjo-aj-D8X"/>
-                                <include reference="eVn-vf-DA5"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="9Xc-76-bAe"/>
-                                <exclude reference="EKT-zs-BaE"/>
-                                <exclude reference="Gzk-IX-Gcv"/>
-                                <include reference="QAZ-y9-k70"/>
-                                <include reference="aoM-FR-Wd7"/>
-                                <exclude reference="cjo-aj-D8X"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="constraints">
-                                <exclude reference="EKT-zs-BaE"/>
-                                <include reference="Pfb-nS-1a7"/>
-                                <exclude reference="Gzk-IX-Gcv"/>
-                                <include reference="a5k-Hh-GA6"/>
-                                <exclude reference="cjo-aj-D8X"/>
-                                <include reference="xto-oE-Yyy"/>
+                                <include reference="mn9-PY-aEW"/>
+                                <exclude reference="sp5-Dr-i8s"/>
+                                <exclude reference="y40-AS-2Sm"/>
+                                <exclude reference="Blw-Pl-yck"/>
+                                <exclude reference="PBF-4j-rSP"/>
+                                <include reference="Pkr-8a-ca6"/>
+                                <exclude reference="gPA-sI-WlI"/>
+                                <include reference="oEO-xK-qqU"/>
+                                <exclude reference="wxF-bH-5LU"/>
                             </mask>
                         </variation>
                     </view>
@@ -97,6 +66,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon" width="60" height="60"/>
+        <image name="Instagrid" width="41.333332061767578" height="13"/>
     </resources>
 </document>
