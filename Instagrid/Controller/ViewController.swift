@@ -154,7 +154,7 @@ extension ViewController {
 // MARK: Alerte share success
 extension ViewController {
     private func presentAlert() {
-        let alert = UIAlertController(title: "Share success!" , message: "You have share your image with success.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Share success!" , message: "You have shared your image with success.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
