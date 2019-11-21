@@ -58,7 +58,7 @@ extension GridView {
 
 //MARK: Reload grid after share success
 extension GridView {
-    // reload the grid after saving image
+    /// reload the grid after saving image
     func reloadGrid() {
         let selectedImage = UIImage(named: "Plus")
         topLeftButton.setImage(selectedImage, for: .normal)
@@ -71,17 +71,8 @@ extension GridView {
 // MARK: Transform grid as image
 extension GridView {
     func transformAsImage() -> UIImage {
-        if #available(iOS 10.0, *) {
-            let renderer = UIGraphicsImageRenderer(bounds: bounds)
-            return renderer.image { rendererContext in
-                layer.render(in: rendererContext.cgContext)
-            }
-        } else {
-            UIGraphicsBeginImageContext(self.frame.size)
-            self.layer.render(in: UIGraphicsGetCurrentContext()!)
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            return UIImage(cgImage: image!.cgImage!)
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in layer.render(in: rendererContext.cgContext)
         }
     }
 }

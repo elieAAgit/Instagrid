@@ -70,7 +70,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         showImagePickerController()
     }
     
-    // UIImagePickerController
     private func showImagePickerController() {
 
         let imagePicker = UIImagePickerController()
@@ -94,6 +93,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 // MARK: SwipeGestureReconizer
 extension ViewController {
+    // pangesture
+    
     private func swipeGesture() {
         let swipeUpGestureReconizer = UISwipeGestureRecognizer(target: self, action:
             #selector (whenUpGestureIsMade(_:)))
